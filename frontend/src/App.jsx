@@ -17,7 +17,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/products/" element={<ProductList />} />
         <Route path="/products/:category" element={<ProductList />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
@@ -25,11 +26,11 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route
           path="/login"
-          element={user ? <Navigate replace to="/" /> : <Login />}
+          element={user ? <Navigate to="/" replace /> : <Login />}
         />
         <Route
           path="/register"
-          element={user ? <Navigate replace to="/" /> : <Register />}
+          element={user ? <Navigate to="/" replace /> : <Register />}
         />
       </Routes>
     </Router>

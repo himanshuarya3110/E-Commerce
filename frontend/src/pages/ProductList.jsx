@@ -37,9 +37,35 @@ const Select = styled.select`
   ${mobile({ margin: "10px 0px" })}
 `;
 const Option = styled.option``;
+
+const categoryList = [
+  "Clothing",
+  "Outerwear",
+  "Leather",
+  "Pants",
+  "Denim",
+  "Footwear",
+  "Casual",
+  "Dresses",
+  "Summer",
+  "Accessories",
+  "Winter",
+  "Sports",
+  "Suits",
+  "Formal",
+  "Shorts",
+  "Watches",
+  "Rainwear",
+  "Sportswear",
+  "Yoga"
+];
+
+
 const ProductList = () => {
   const location = useLocation();
-  const cat = location.pathname.split("/")[2];
+  // console.log(location)
+  const cat = location.pathname.split("/")[2]; //we split it and take 2nd element
+  // console.log(cat)
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
 
@@ -54,18 +80,18 @@ const ProductList = () => {
     <Container>
       <Navbar />
       <Announcement />
-      <Title>Dresses</Title>
+      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFilters}>
             <Option disabled>Color</Option>
-            <Option>White</Option>
-            <Option>Black</Option>
-            <Option>Red</Option>
-            <Option>Blue</Option>
-            <Option>Yellow</Option>
-            <Option>Green</Option>
+            <Option>white</Option>
+            <Option>black</Option>
+            <Option>red</Option>
+            <Option>blue</Option>
+            <Option>yellow</Option>
+            <Option>green</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
             <Option disabled>Size</Option>

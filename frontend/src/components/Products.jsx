@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { popularProducts } from "../data";
 import Product from "./Product";
 import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   padding: 20px;

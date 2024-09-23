@@ -57,6 +57,8 @@ router.get("/find/:id", async (req, res) => {
 });
 
 //GET ALL PRODUCTS
+// http://localhost:5000/api/products?new=true
+// http://localhost:5000/api/products?category=example
 router.get("/", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
